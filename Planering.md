@@ -12,6 +12,8 @@ Detta är planeringen av en ctf utamning (capture the flag), där man genom att 
   - [syfte](#syfte)
   - [Lösningsskiss](#lösningsskiss)
   - [uppskattad svårighetsgrad](#uppskattad-svårighetsgrad)
+  - [Utväcklingspotential](#utväcklingspotential)
+  - [Utvecklingspotential](#utvecklingspotential)
 
 
 
@@ -82,5 +84,30 @@ Svårighetsgraden uppskattas till **0.6** (60% förväntas klara uppgiften), vil
 
 **Motivering**: Ingen av stegen i uppgiften är speceillt svåra i sig, men det kräver att man har kunskap om riskerna med eval. Dessutom måsta man veta Bruteforcar ett lösenord, samt hur man hittar metada i en bild.
 
+## Utväcklingspotential
+## Utvecklingspotential
 
+1. **Svårare Command Injection**
+    - Implementera basic input filtering
+    - Blockera vanliga shell commands
+    - Kräv mer avancerade bypass-tekniker
+
+2. **Komplex ZIP-struktur**
+    - Använd nested ZIP files
+    - Implementera olika krypteringsmetoder
+    - Göm filer i andra filformat
+
+3. **Metadata Challenges**
+    - Fördela flaggan över flera bilder
+    - Kryptera metadata
+    - Använd steganografi
+
+4. **Server Hardening**
+    - Begränsa användarrättigheter
+    - Implementera timeouts
+    - Lägg till IP-baserad rate limiting
+
+5. **Extra Säkerhetslager**
+    - Implementera honeypots 
+    - Lägg till decoy files
 
