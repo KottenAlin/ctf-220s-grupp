@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Directory Access with eval</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    input, button {
+      padding: 10px;
+      margin: 5px;
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>Directory Access with eval</h1>
+  <p><strong>Warning:</strong> This is an insecure example. Do not use in production.</p>
+
+  <label for="command">Enter a command (e.g., `__dirname`):</label>
+  <input type="text" id="command" placeholder="e.g., __dirname">
+  <button onclick="executeCommand()">Execute</button>
+
+  <h2>Output:</h2>
+  <pre id="output"></pre>
+
+  <script>
+    function executeCommand() {
+      const command = document.getElementById('command').value;
+      try {
+        // WARNING: Using eval is dangerous!
+        const result = eval(command);
+        document.getElementById('output').textContent = result;
+      } catch (error) {
+        document.getElementById('output').textContent = `Error: ${error.message}`;
+      }
+    }
+  </script>
+</body>
+</html>
