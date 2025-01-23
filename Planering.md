@@ -27,6 +27,8 @@ Uppgiften består av en säkerhetsutmaning (CTF) där deltagaren ska:
 5. Knäcka ZIP-filens lösenord
 6. Extrahera metadata från en bild i ZIP-filen för att hitta CTF-flaggan
 
+![Älg](Capture.PNG)
+
 #### Komponenter
 - SSH-server med miniräknar-applikation
 - Osäkert implementerat `eval`-kommando
