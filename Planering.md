@@ -7,8 +7,8 @@ Detta är planeringen av en ctf utamning (capture the flag), där man genom att 
 - [Planering cft-uppgift: **Älgvaluate**](#planering-cft-uppgift-älgvaluate)
   - [Table of Contents](#table-of-contents)
   - [Beskrivning av uppgift](#beskrivning-av-uppgift)
-      - [Komponenter](#komponenter)
-      - [Säkerhetskoncept](#säkerhetskoncept)
+    - [Komponenter](#komponenter)
+    - [Säkerhetskoncept](#säkerhetskoncept)
   - [syfte](#syfte)
   - [Lösningsskiss](#lösningsskiss)
   - [uppskattad svårighetsgrad](#uppskattad-svårighetsgrad)
@@ -28,14 +28,16 @@ Uppgiften består av en säkerhetsutmaning (CTF) där deltagaren ska:
 6. Extrahera metadata från en bild i ZIP-filen för att hitta CTF-flaggan
 
 ![Älg](Capture.PNG)
+miniraknar interface
 
-#### Komponenter
+
+### Komponenter
 - SSH-server med miniräknar-applikation
 - Osäkert implementerat `eval`-kommando
 - Lösenordsskyddad ZIP-fil
 - Bild med dold metadata
 
-#### Säkerhetskoncept
+### Säkerhetskoncept
 - Command Injection via `eval`
 - Brute-force av ZIP-lösenord
 - Metadata-analys av bilder
