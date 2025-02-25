@@ -1,6 +1,11 @@
 # Cybersäkerhetsuppgift **Älgvaluate**
 
-Detta projekt är en CTF-utmaning (Capture The Flag) som låter användare utforska och lära sig om `evals` sårbarheter från en hemsida. För mer detaljerad information om uppgifterna och målen, se [dokumenteringen](dokumentering.md).
+Detta projekt är en CTF-utmaning (Capture The Flag) som låter användare utforska och lära sig om `evals` sårbarheter från en hemsida. För mer detaljerad information om uppgiften och lösningen **(samt den korekta flaggan)**, se [dokumenteringen](dokumentering.md).
+
+för att komma åt utmaningen gå in på [10.22.4.116](http://10.22.4.116/)
+
+
+
 ## CTF-220S Setup Guide
 
 ### Nödvändiga komponenter
