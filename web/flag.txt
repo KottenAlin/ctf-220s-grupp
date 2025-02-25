@@ -1,0 +1,15 @@
+Jag är ute.
+
+Kodens murar höll mig instängd, men jag hittade en väg ut. Fragmenten av sidorna låg spridda, ledtrådar gömda i skuggorna. Vägen framåt är inte längre en fråga om att bryta sig fri – nu handlar det om att hitta det rätta.
+
+Bland alla filer finns en som bär svaret. En dold stig i katalogernas labyrint, en nyckel inlåst bakom lager av tystnad. Kanske är det en fråga om rätt plats, rätt tid.
+
+Och om du letar tillräckligt noga, längst ner i djupet, kan du hitta vägen tillbaka in. 👀
+
+
+
+ssh guest@10.22.4.116 (psst, du måste kunna lösenordet kan vara samma som användarnamnet?)
+
+
+
+

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fun Interface</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background: white;
+            padding: 2em;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        .button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4ecdc4;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .button:hover {
+            transform: scale(1.1);
+        }
+        #message {
+            margin-top: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Fun Interface!</h1>
+        <button class="button" onclick="showMessage()">Click Me!</button>
+        <button class="button" onclick="changeColor()">Change Color</button>
+        <button class="button" onclick="toggleMenu()">Menu</button>
+        <div id="menuPanel" style="display: none;">
+            <h2>Register New Account</h2>
+            <input type="text" id="username" placeholder="Username" style="margin: 5px; padding: 5px;">
+            <input type="password" id="password" placeholder="Password" style="margin: 5px; padding: 5px;">
+            <button class="button" onclick="register()">Register</button>
+        </div>
+
+        <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menuPanel');
+            menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function register() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            if (username && password) {
+                alert('Account created successfully!');
+                document.getElementById('menuPanel').style.display = 'none';
+            } else {
+                alert('Please fill in all fields');
+            }
+        }
+        </script>
+        <div id="message"></div>
+    </div>
+
+    <script>
+        function showMessage() {
+            const messages = [
+                "You're awesome! 🌟",
+                "Have a great day! 🌈",
+                "Keep smiling! 😊",
+                "You found the secret message! 🎉"
+            ];
+            document.getElementById('message').innerText = 
+                messages[Math.floor(Math.random() * messages.length)];
+        }
+
+        function changeColor() {
+            const colors = ['#ff6b6b', '#4ecdc4', '#95e1d3', '#f7d794'];
+            document.body.style.background = 
+                `linear-gradient(45deg, ${colors[Math.floor(Math.random() * colors.length)]}, 
+                ${colors[Math.floor(Math.random() * colors.length)]})`;
+        }
+    </script>
+</body>
+</html>

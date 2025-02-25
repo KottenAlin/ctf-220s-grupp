@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About - Local Network</title>
+    <!-- Link to a cool Google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #f0f0f0;
+
+            line-height: 1.6;
+        }
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            margin-bottom: 20px;
+
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+        nav .logo {
+            color: #fff;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        nav .menu-items {
+            display: flex;
+        }
+        nav .menu-items a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            padding: 8px 12px;
+            transition: background-color 0.3s, transform 0.3s;
+            border-radius: 4px;
+        }
+        nav .menu-items a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+        @media (max-width: 600px) {
+            .menu-items {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.8);
+                border-radius: 0 0 8px 8px;
+            }
+            .menu-items a {
+                margin: 0;
+                border-top: 1px solid rgba(255,255,255,0.2);
+                padding: 10px 20px;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            nav.active .menu-items {
+                display: flex;
+            }
+        }
+        .swish {
+            text-align: center;
+            margin-top: 20px;
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Calculator</div>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <div class="menu-items">
+            <a href="index.html">Calculator</a>
+            <a href="about.html">About</a>
+        </div>
+    </nav>
+
+    <div class="content">
+        <h1>About</h1>
+        <p>This page provides information about the Calculator application. The Calculator was designed to offer a simple and intuitive interface for performing basic arithmetic operations.</p>
+        <p>Navigate using the menu to switch between the Calculator and this About page.</p>
+    </div>
+
+    <div class="content" style="margin-top: 20px; margin-bottom: 20px;">
+        <img src="swish-QR-large.png" alt="" style="width: 300px; border-radius: 8px; display: block; margin: 0 auto;">
+        <div class="social-links" style="text-align: center; margin-top: 20px;">
+            <a href="https://twitter.com/yourprofile" target="_blank" style="margin: 0 10px;">Twitter</a>
+            <a href="https://facebook.com/yourprofile" target="_blank" style="margin: 0 10px;">Facebook</a>
+            <a href="https://instagram.com/yourprofile" target="_blank" style="margin: 0 10px;">Instagram</a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" style="margin: 0 10px;">LinkedIn</a>
+        </div>
+    </div>
+    <!--Ledtråd: ZmV0Y2goJ2ZsYWcudHh0JykKICAudGhlbihyZXNwb25zZSA9PiByZXNwb25zZS50ZXh0KCkpCiAgLnRoZW4odGV4dCA9PiBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgncmVzdWx0JykudmFsdWUgPSB0ZXh0KQo= -->
+
+    
+
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('nav').classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<div class="navbar">
+			<div class="menubutton"></div>
+		</div>
+
+		<div class="container">
+			<div class="display-container">
+				<div class="display"></div>
+				<div class="temp-button-container">
+					<div class="temp-button">
+						<div id="C" class="buttons active" onclick="changeActive(this)">
+							C
+						</div>
+						<div id="F" class="buttons" onclick="changeActive(this)">F</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="graph-container">
+				<div class="graph">
+					<div class="horizontal-graph">
+						<div class="actualGraph"></div>
+						<div class="amplitude"></div>
+					</div>
+					<div class="time"></div>
+				</div>
+
+				<div class="time-button-container">
+					<div class="time-button">
+						<div class="buttons active" onclick="changeActive(this)">Live</div>
+						<div class="buttons" onclick="changeActive(this)">1 hour</div>
+						<div class="buttons" onclick="changeActive(this)">1 day</div>
+						<div class="buttons" onclick="changeActive(this)">1 week</div>
+					</div>
+					<div name="tset"></div>
+				</div>
+			</div>
+		</div>
+		<div id="test"></div>
+		<script src="script.js"></script>
+		<div>hej</div>
+		<div>Hejdå</div>
+	</body>
+</html>

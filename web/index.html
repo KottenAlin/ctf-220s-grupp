@@ -1,47 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Directory Access with eval</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-    }
-    input, button {
-      padding: 10px;
-      margin: 5px;
-    }
-    pre {
-      background: #f4f4f4;
-      padding: 10px;
-      border: 1px solid #ccc;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calculator - Local Network</title>
+    <!-- Link to Google Font Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #f0f0f0;
+
+            line-height: 1.6;
+        }
+
+        .calculator button {
+            border-radius: 8px;
+            border: 2px solid black;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            margin-bottom: 20px;
+            
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+        nav .logo {
+            color: #fff;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        nav .menu-items {
+            display: flex;
+        }
+        nav .menu-items a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            padding: 8px 12px;
+            transition: background-color 0.3s, transform 0.3s;
+            border-radius: 4px;
+        }
+        nav .menu-items a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+        @media (max-width: 600px) {
+            .menu-items {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.8);
+                border-radius: 0 0 8px 8px;
+            }
+            .menu-items a {
+                margin: 0;
+                border-top: 1px solid rgba(255,255,255,0.2);
+                padding: 10px 20px;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            nav.active .menu-items {
+                display: flex;
+            }
+        }
+        .content {
+            max-width: 400px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        h1 {
+            margin-top: 0;
+        }
+        #result {
+            width: 100%;
+            height: 50px;
+            font-size: 1.5em;
+            text-align: right;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: none;
+            border-radius: 4px;
+        }
+        .calculator {
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(4, 1fr);
+        }
+        .calculator button {
+            padding: 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            background-color: #fff;
+            color: #333;
+            transition: background-color 0.3s;
+        }
+        .calculator button:hover {
+            background-color: #ddd;
+        }
+        .clear {
+            grid-column: span 4;
+            background-color: #f44336;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
-  <h1>Directory Access with eval</h1>
-  <p><strong>Warning:</strong> This is an insecure example. Do not use in production.</p>
+    <nav>
+        <div class="logo">Calculator</div>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <div class="menu-items">
+            <a href="index.html">Calculator</a>
+            <a href="about.html">About</a>
+            <a href="https://www.youtube.com/watch?v=uHgt8giw1LY">Do not Touch</a>
+        </div>
+    </nav>
 
-  <label for="command">Enter a command (e.g., `__dirname`):</label>
-  <input type="text" id="command" placeholder="e.g., __dirname">
-  <button onclick="executeCommand()">Execute</button>
+    <div class="content">
+        <h1>Älgvaluator</h1>
+        <!--Passwd=guest-->
+        <input type="text" id="result" placeholder="0">
+        <div class="calculator">
+            <button onclick="appendValue('7')">7</button>
+            <button onclick="appendValue('8')">8</button>
+            <button onclick="appendValue('9')">9</button>
+            <button onclick="appendValue('/')">/</button>
+            <button onclick="appendValue('4')">4</button>
+            <button onclick="appendValue('5')">5</button>
+            <button onclick="appendValue('6')">6</button>
+            <button onclick="appendValue('*')">*</button>
+            <button onclick="appendValue('1')">1</button>
+            <button onclick="appendValue('2')">2</button>
+            <button onclick="appendValue('3')">3</button>
+            <button onclick="appendValue('-')">-</button>
+            <button onclick="appendValue('0')">0</button>
+            <button onclick="appendValue('.')">.</button>
+            <button class="" onclick="clearResult()">Clear</button>
+            <button onclick="appendValue('+')">+</button>
+            <button class="clear" onclick="calculateResult()">=</button>
 
-  <h2>Output:</h2>
-  <pre id="output"></pre>
+        </div>
+        
+    </div>
 
-  <script>
-    function executeCommand() {
-      const command = document.getElementById('command').value;
-      try {
-        // WARNING: Using eval is dangerous!
-        const result = eval(command);
-        document.getElementById('output').textContent = result;
-      } catch (error) {
-        document.getElementById('output').textContent = `Error: ${error.message}`;
-      }
-    }
-  </script>
+    
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('nav').classList.toggle('active');
+        }
+
+        function appendValue(val) {
+            const result = document.getElementById('result');
+            result.value += val;
+        }
+
+        function calculateResult() {
+            const result = document.getElementById('result');
+            try {
+                result.value = eval(result.value);
+            } catch (e) {
+                result.value = "Error";
+            }
+        }
+
+        function clearResult() {
+            document.getElementById('result').value = '';
+        }
+
+        // Rick Roll after a set time (3000000 milliseconds)
+        setTimeout(() => {
+            window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+        }, 3000000);
+    </script>
 </body>
+
 </html>

@@ -80,7 +80,7 @@ Syftet med denna CTF-uppgift är att:
 
 ## uppskattad svårighetsgrad
 
-Svårighetsgraden uppskattas till **0.6** (60% förväntas klara uppgiften), vilket kan förändras i framtiden.
+Svårighetsgraden uppskattas till **0.25** (25% förväntas klara uppgiften), vilket kan förändras i framtiden.
 
 **Motivering**: Ingen av stegen i uppgiften är speceillt svåra i sig, men det kräver att man har kunskap om riskerna med eval. Dessutom måsta man veta Bruteforcar ett lösenord, samt hur man hittar metada i en bild.
 

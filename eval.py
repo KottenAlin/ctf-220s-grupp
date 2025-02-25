@@ -1,5 +1,8 @@
 import tkinter as tk
 from tkinter import ttk
+import webbrowser
+import threading
+import time
 
 class CalculatorApp:
     def __init__(self, root):
@@ -51,8 +54,17 @@ class CalculatorApp:
             
     def clear(self):
         self.expression.set('')
+        
+        
+def rickroll():
+    time.sleep(300)  # Wait 5 minutes
+    webbrowser.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
 
 if __name__ == '__main__':
+
+
+    # Start rickroll timer when app launches
+    threading.Thread(target=rickroll, daemon=True).start()
     root = tk.Tk()
     app = CalculatorApp(root)
     root.mainloop()
